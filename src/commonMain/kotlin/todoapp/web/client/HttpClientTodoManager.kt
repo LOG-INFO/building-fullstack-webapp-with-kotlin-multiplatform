@@ -36,6 +36,7 @@ class HttpClientTodoManager(
     }
 
     override suspend fun register(text: String): TodoId {
+        logger.info{"testtest"}
         TodoValidator.validate(text)
 
         return httpClient.post(webAPIProperties.registerUrl) {

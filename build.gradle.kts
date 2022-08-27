@@ -91,9 +91,11 @@ kotlin {
             }
         }
         browser {
+            // Webpack 기술 기반으로 애플리케이션 번들링
             commonWebpackConfig {
                 cssSupport.enabled = true
                 outputFileName = "main.js"
+                // 출력 위치가 서버쪽 리소스 어딘가?
                 outputPath = File(buildDir, "processedResources/jvm/main/static")
             }
             testTask {

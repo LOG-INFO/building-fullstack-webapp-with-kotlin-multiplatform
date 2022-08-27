@@ -38,9 +38,9 @@ data class TodoId(val value: String) {
     }
 }
 
-interface TodoIdGenerator {
+expect interface TodoIdGenerator {
 
-    fun generateId(): TodoId
+    open fun generateId(): TodoId
 }
 
 class RandomTodoIdGenerator: TodoIdGenerator {
@@ -51,3 +51,5 @@ class RandomTodoIdGenerator: TodoIdGenerator {
         .joinToString("")
         .let { TodoId(it) }
 }
+
+class UUIDTodoIdGenerator: TodoIdGenerator
